@@ -1,5 +1,6 @@
 using BuberBreakfast.Contracts.Breakfast;
 using BuberBreakfast.Models;
+using BuberBreakfast.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuberBreakfast.Controllers;
@@ -8,6 +9,13 @@ namespace BuberBreakfast.Controllers;
 [Route("breakfasts")]
 public class BreakfastsController : ControllerBase
 {
+    private readonly IBreakfastService _breakfastService;
+
+    public BreakfastsController(IBreakfastService breakfastService)
+    {
+        _breakfastService = breakfastService;
+    }
+
     [HttpPost]
     public IActionResult CreateBreakfast(CreateBreakfastRequest request)
     {
@@ -22,7 +30,7 @@ public class BreakfastsController : ControllerBase
             request.Sweet
         );
 
-        //TODO: save breakfast for database
+        _breakfastService.CreateBreakfast(breakfast);
 
         var response = new BreakfastResponse(
             breakfast.Id,

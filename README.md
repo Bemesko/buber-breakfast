@@ -1,6 +1,13 @@
 # Buber Breakfast
 
-This is me learning how to build a Web API in .NET.
+This is me learning how to build a Web API in .NET. Also it's a part of my current initiative to deepen my understanding of .NET and be able to create my own applications from scratch with a decent architecture.
+
+Buber Breakfast is a backend API that allows CRUD operations for breakfast ideas.
+It stores these breakfasts in-memory, because I didn't bother implementing the database on my own.
+
+What I learned during this project can be found in the [tutorial notes](#tutorial-notes).
+
+The project is based on this repository: https://github.com/amantinband/buber-breakfast
 
 ---
 
@@ -40,5 +47,3 @@ var statusCode = firstError.Type switch
 };
 ```
   - Really useful for dealing with all possible cases in a situation
-
-tutorial checkpoint: 52:01

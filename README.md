@@ -29,4 +29,16 @@ builder.Services.AddSingleton<IBreakfastService, BreakfastService>();
   - `AddScoped` creates a new object for each request's lifetime (in the application pipeline)
   - `AddTransient` creates a new object everytime
 
-tutorial checkpoint: 43:59
+- How to do a "rust map" in C#:
+```csharp
+var statusCode = firstError.Type switch
+{
+    ErrorType.NotFound => StatusCodes.Status404NotFound,
+    ErrorType.Validation => StatusCodes.Status400BadRequest,
+    ErrorType.Conflict => StatusCodes.Status409Conflict,
+    _ => StatusCodes.Status500InternalServerError
+};
+```
+  - Really useful for dealing with all possible cases in a situation
+
+tutorial checkpoint: 52:01

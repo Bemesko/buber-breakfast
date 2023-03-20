@@ -6,6 +6,8 @@ This is me learning how to build a Web API in .NET.
 
 ## Tutorial Notes
 
+Link: https://www.youtube.com/watch?v=PmDJIooZjBE
+
 - Putting the API definition in a separate package is easier for versioning and consumption
 - `dotnet new sln` to create a new .NET solution (has definitions for `dotnet build` for example)
 - `dotnet new classlib` to create a library definition project
@@ -26,3 +28,5 @@ builder.Services.AddSingleton<IBreakfastService, BreakfastService>();
 - Here it's using `AddSingleton` to use it as a singleton but there's also:
   - `AddScoped` creates a new object for each request's lifetime (in the application pipeline)
   - `AddTransient` creates a new object everytime
+
+tutorial checkpoint: 43:59

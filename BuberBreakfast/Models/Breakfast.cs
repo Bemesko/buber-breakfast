@@ -1,3 +1,4 @@
+using BuberBreakfast.Contracts.Breakfast;
 using BuberBreakfast.ServiceErrors;
 using ErrorOr;
 
@@ -75,5 +76,29 @@ public class Breakfast
             sweet);
 
         return breakfast;
+    }
+
+    public static ErrorOr<Breakfast> From(CreateBreakfastRequest request)
+    {
+        return Create(
+            request.Name,
+            request.Description,
+            request.StartDateTime,
+            request.EndDateTime,
+            request.Savory,
+            request.Sweet
+        );
+    }
+    public static ErrorOr<Breakfast> From(Guid id, UpsertBreakfastRequest request)
+    {
+        return Create(
+            request.Name,
+            request.Description,
+            request.StartDateTime,
+            request.EndDateTime,
+            request.Savory,
+            request.Sweet,
+            id
+        );
     }
 }
